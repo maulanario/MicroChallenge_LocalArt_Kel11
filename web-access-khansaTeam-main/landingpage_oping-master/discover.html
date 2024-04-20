@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discover</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="sidebar-item">
+        <img src="assets/logo.png" alt="logo" />
+      </div>
+      <div class="sidebar-item">
+        <span>Profile</span>
+      </div>
+      <div class="sidebar-item">
+        <span>Home</span>
+      </div>
+      <div class="sidebar-item">
+        <span>About</span>
+      </div>
+      <div class="sidebar-item">
+        <span>Contact</span>
+      </div>
+    </div>
+    <section class="discovery__section">
+      <div class="search__bar_discovery">
+        <input
+          type="text"
+          class="section1__input"
+          placeholder="Coba seni rupa, seni musik, seni tari..."
+        />
+        <button class="button__searchbar">Cari</button>
+      </div>
+      <div class="container__filter__discovery">
+        <button class="button__filter__discovery">
+          <img src="assets/Filter_alt.png" alt="" class="logo__filter" />
+          Filter
+        </button>
+      </div>
+      <div class="container__item__discover">
+        <div class="flex__item__discover">
+          <img src="assets/discovery.png" alt="" class="img__group" id="img1" />
+          <img
+            src="assets/discovery2.png"
+            alt=""
+            class="img__group"
+            id="img2"
+          />
+        </div>
+        <div class="flex__item__discover">
+          <img src="assets/discovery3.png" alt="" class="img__solo" id="img3" />
+        </div>
+        <div class="flex__item__discover">
+          <img
+            src="assets/discovery4.png"
+            alt=""
+            class="img__group"
+            id="img4"
+          />
+          <img
+            src="assets/discovery5.png"
+            alt=""
+            class="img__group"
+            id="img5"
+          />
+        </div>
+      </div>
+      <script>
+        for (let i = 1; i <= 5; i++) {
+          document
+            .getElementById(`img${i}`)
+            .addEventListener("click", function () {
+              window.location.href = "./discoverDetail.html";
+            });
+        }
+      </script>
+    </section>
+  </body>
+</html>

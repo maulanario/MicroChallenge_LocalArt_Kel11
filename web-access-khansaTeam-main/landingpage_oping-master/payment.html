@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>payment</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="section__payment">
+      <div class="container__form__payment">
+        <div class="container__card__payment">
+          <h1>Informasi Kartu</h1>
+          <div class="card__payment">
+            <div class="flex__logo">
+              <img src="assets/Text.png" alt="text" class="logo__payment" />
+              <img src="assets/Symbol.png" alt="master" class="logo__payment" />
+            </div>
+            <div class="container__cardinput__payment">
+              <div class="nomor__kartu">
+                <h3>Nomor Kartu</h3>
+                <input type="text" placeholder="0000 0000 0000 0000" />
+              </div>
+              <div class="flex__cvv">
+                <div class="form__bulantahun">
+                  <h3>Bulan dan Tahun</h3>
+                  <div class="bulan__tahun">
+                    <input
+                      type="text"
+                      class="bulan__tahun__input"
+                      placeholder="00"
+                    />
+                    <h1>/</h1>
+                    <input
+                      type="text"
+                      class="bulan__tahun__input"
+                      placeholder="00"
+                    />
+                  </div>
+                </div>
+                <div class="form__cvv">
+                  <h3>Kode CVV</h3>
+                  <input type="text" placeholder="****" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container__data__diri">
+          <h1>Data diri</h1>
+          <div class="container__datadirii">
+            <div class="container__input__datadiri">
+              <input
+                type="text"
+                class="input__datadiri"
+                placeholder="Nama Depan"
+              />
+              <input
+                type="text"
+                class="input__datadiri"
+                placeholder="Nama Belakang"
+              />
+            </div>
+            <input type="text" class="input__datadiri" placeholder="Provinsi" />
+            <div class="container__input__datadiri">
+              <input type="text" class="input__datadiri" placeholder="Kota" />
+              <input
+                type="text"
+                class="input__datadiri"
+                placeholder="Zip Code"
+              />
+            </div>
+            <input type="text" class="input__datadiri" placeholder="No. Hp" />
+          </div>
+        </div>
+      </div>
+      <button class="button__payment" id="bayarButton">Bayar Sekarang</button>
+    </section>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <p>Pembayaran berhasil dilakukan</p>
+        <button class="close">Kembali</button>
+      </div>
+    </div>
+    <div id="myModalGagal" class="modal">
+      <div class="modal-content">
+        <p>Pembayaran Gagal</p>
+        <div class="flex__button__payment__gagal">
+          <a href="./profile.html" class="close">Profile</a>
+          <a href="./contact-us.html" class="contact__us_btt">
+            <img src="assets/Button 1.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var btn = document.getElementById("bayarButton");
+    var modalSuccess = document.getElementById("myModal");
+    var modalFail = document.getElementById("myModalGagal");
+    var span = document.getElementsByClassName("close");
+
+    btn.onclick = function () {
+      var inputs = document.querySelectorAll('input[type="text"]');
+      var isEmpty = false;
+      inputs.forEach(function (input) {
+        if (input.value.trim() === "") {
+          isEmpty = true;
+        }
+      });
+      if (isEmpty) {
+        modalFail.style.display = "block";
+      } else {
+        modalSuccess.style.display = "block";
+      }
+    };
+
+    span[0].onclick = function () {
+      modalSuccess.style.display = "none";
+    };
+
+    span[1].onclick = function () {
+      modalFail.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+      if (event.target == modalSuccess) {
+        modalSuccess.style.display = "none";
+      }
+      if (event.target == modalFail) {
+        modalFail.style.display = "none";
+      }
+    };
+  </script>
+</html>

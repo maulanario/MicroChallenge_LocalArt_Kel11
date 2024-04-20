@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="container__loginsingup">
+      <div class="container__form">
+        <img src="assets/logo.png" alt="" />
+        <div class="auth__form">
+          <div class="google__form">
+            <h1>Mohon masukkan email</h1>
+            <button class="button_login_google">
+              <img src="assets/google_logo.png" alt="" class="google_logo" />
+              Masuk dengan Google
+            </button>
+            <div class="divider__form">
+              <div class="line__auth"></div>
+              <h5>ATAU LOGIN DENGAN</h5>
+            </div>
+            <input
+              type="text"
+              class="input__email"
+              placeholder="name@gmail.com"
+              id="emailInput"
+            />
+            <button class="next__login" id="lanjutkanButton">
+              <a href="./discoverDetail.html" id="text">Lanjutkan</a>
+            </button>
+            <h5>Belum punya akun? <a href="./signup.html">Sign up</a></h5>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      const emailInput = document.getElementById("emailInput");
+      const lanjutkanButton = document.getElementById("lanjutkanButton");
+
+      emailInput.addEventListener("input", function () {
+        if (emailInput.value.trim() !== "") {
+          lanjutkanButton.style.backgroundColor = "#921C1D";
+          lanjutkanButton.style.color = "white";
+          text.style.backgroundColor = "#921C1D";
+          text.style.color = "white";
+        } else {
+          lanjutkanButton.style.backgroundColor = "";
+        }
+      });
+    </script>
+  </body>
+</html>
